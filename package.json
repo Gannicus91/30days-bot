@@ -4,9 +4,9 @@
   "description": "Telegram bot for 30 days marathon",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon",
+    "start:dev": "NODE_ENV=developement nodemon",
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/index.js",
+    "start": "NODE_ENV=production node dist/index.js",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [
@@ -19,10 +19,16 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "lodash-es": "^4.17.21",
-    "telegraf": "^4.10.0"
+    "mongodb": "^4.11.0",
+    "node-schedule": "^2.1.0",
+    "telegraf": "^4.10.0",
+    "telegraf-session-mongodb": "^2.0.2",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.0",
+    "@types/node-schedule": "^2.1.0",
+    "@types/validator": "^13.7.9",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
     "eslint": "^8.25.0",
