@@ -42,10 +42,6 @@ async function main(bot: Telegraf<CustomContext>, mongoClient: MongoClient) {
 			ctx.session = {};
 		});
 
-		bot.on('video', (ctx)=>{
-			console.log(ctx.message.video.file_id);
-		});
-
 		bot.on('text', async (ctx, next) => {
 			if (ctx.session.userName || ctx.session.userEmail) {
 				return next();
